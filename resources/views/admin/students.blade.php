@@ -127,28 +127,70 @@ Students
                     <div class="modal-body">
                         <div class="input-group input-group-static mb-4">
                             <label>Student ID</label>
-                            <input type="text" name="student_id" class="form-control" required>
+                            <input type="text" 
+                                   class="form-control border border-2 border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:border-gray-400" 
+                                   style="border-color: #d2d6dc;"
+                                   id="student_id" 
+                                   name="student_id" 
+                                   required>
                         </div>
 
                         <div class="input-group input-group-static mb-4">
                             <label>Name</label>
-                            <input type="text" name="name" class="form-control" required>
+                            <input type="text" 
+                                   class="form-control border border-2 border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:border-gray-400" 
+                                   style="border-color: #d2d6dc;"
+                                   id="name" 
+                                   name="name" 
+                                   required>
                         </div>
 
                         <div class="input-group input-group-static mb-4">
                             <label>Email</label>
-                            <input type="email" name="email" class="form-control" required>
+                            <input type="email" 
+                                   class="form-control border border-2 border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:border-gray-400" 
+                                   style="border-color: #d2d6dc;"
+                                   id="email" 
+                                   name="email" 
+                                   required>
                         </div>
 
                         <div class="input-group input-group-static mb-4">
                             <label>Course</label>
-                            <input type="text" name="course" class="form-control" required>
+                            <input type="text" 
+                                   class="form-control border border-2 border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:border-gray-400" 
+                                   style="border-color: #d2d6dc;"
+                                   id="course" 
+                                   name="course" 
+                                   required>
                         </div>
 
                         <div class="input-group input-group-static mb-4">
                             <label>Year</label>
-                            <input type="text" name="year" class="form-control" required>
+                            <select class="form-control border border-2 border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:border-gray-400" 
+                                    style="border-color: #d2d6dc;"
+                                    id="year" 
+                                    name="year" 
+                                    required>
+                                <option value="1st Year">1st Year</option>
+                                <option value="2nd Year">2nd Year</option>
+                                <option value="3rd Year">3rd Year</option>
+                                <option value="4th Year">4th Year</option>
+                            </select>
                         </div>
+
+                        <div class="input-group input-group-static mb-4">
+                            <label>Gender</label>
+                            <select class="form-control border border-2 border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:border-gray-400" 
+                                    style="border-color: #d2d6dc;"
+                                    id="gender" 
+                                    name="gender" 
+                                    required>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>                
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -184,7 +226,7 @@ Students
                         </div>
                         <div class="mb-3">
                             <label for="name{{ $student->id }}" class="form-label">Name</label>
-                            <input type="number" 
+                            <input type="text" 
                                    class="form-control border border-2 border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:border-gray-400 @error('name') is-invalid @enderror" 
                                    style="border-color: #d2d6dc;"
                                    id="name{{ $student->id }}" 
@@ -239,17 +281,6 @@ Students
                                 <option value="Female" {{ $student->gender == 'Female' ? 'selected' : '' }}>Female</option>
                                 <option value="Other" {{ $student->gender == 'Other' ? 'selected' : '' }}>Other</option>
                             </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="profile_image{{ $student->id }}" class="form-label">Profile Image</label>
-                            <input type="file" 
-                                   class="form-control border border-2 border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:border-gray-400" 
-                                   style="border-color: #d2d6dc;"
-                                   id="profile_image{{ $student->id }}" 
-                                   name="profile_image">
-                            @if($student->profile_image)
-                                <img src="{{ $student->profile_image }}" alt="Current profile image" class="mt-2" style="max-width: 100px;">
-                            @endif
                         </div>
                     </div>
                     <div class="modal-footer">

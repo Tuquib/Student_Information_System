@@ -22,7 +22,7 @@ class EnrollmentController extends Controller
             ->groupBy('student_id');
         $students = Student::all();
         $subjects = Subject::all();
-        return view('enrollment', compact('enrollments', 'students', 'subjects'));
+        return view('admin.enrollment', compact('enrollments', 'students', 'subjects'));
     }
 
     /**

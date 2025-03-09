@@ -15,13 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/subjects', function () {
+Route::get('admin/subjects', function () {
     return view('subjects');
-})->name('subjects');
-
-Route::get('/profiles', function () {
-    return view('profiles');
-})->name('profiles');
+})->name('admin/subjects');
 
 // Admin routes
 Route::get('/dashboard', [DashboardController::class, 'index'])
@@ -41,7 +37,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     // Student routes
-    Route::get('/students', [StudentController::class, 'index'])->name('students.index');
+    Route::get('admin/students', [StudentController::class, 'index'])->name('students.index');
     Route::post('/students', [StudentController::class, 'store'])->name('students.store');
     Route::get('/students/{student}/edit', [StudentController::class, 'edit'])->name('students.edit');
     Route::patch('/students/{student}', [StudentController::class, 'update'])->name('students.update');
@@ -49,13 +45,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/students/search', [StudentController::class, 'search'])->name('students.search');
     
     // Subject routes
-    Route::get('/subjects', [SubjectController::class, 'index'])->name('subjects.index');
+    Route::get('admin/subjects', [SubjectController::class, 'index'])->name('subjects.index');
     Route::post('/subjects', [SubjectController::class, 'store'])->name('subjects.store');
     Route::patch('/subjects/{subject}', [SubjectController::class, 'update'])->name('subjects.update');
     Route::delete('/subjects/{subject}', [SubjectController::class, 'destroy'])->name('subjects.destroy');
     
     // Enrollment routes
-    Route::get('/enrollments', [EnrollmentController::class, 'index'])->name('enrollments.index');
+    Route::get('admin/enrollments', [EnrollmentController::class, 'index'])->name('enrollments.index');
     Route::post('/enrollments', [EnrollmentController::class, 'store'])->name('enrollments.store');
     Route::patch('/enrollments/{enrollment}', [EnrollmentController::class, 'update'])->name('enrollments.update');
     Route::delete('/enrollments/{enrollment}', [EnrollmentController::class, 'destroy'])->name('enrollments.destroy');
@@ -65,7 +61,7 @@ Route::middleware('auth')->group(function () {
     
     // Grade routes with name prefix 'grades.'
     Route::group(['as' => 'grades.'], function () {
-        Route::get('/grades', [GradeController::class, 'index'])->name('index');
+        Route::get('admin/grades', [GradeController::class, 'index'])->name('index');
         Route::post('/grades', [GradeController::class, 'store'])->name('store');
         Route::patch('/grades/{enrollment}', [GradeController::class, 'update'])->name('update');
         Route::delete('/grades/{grade}', [GradeController::class, 'destroy'])->name('destroy');

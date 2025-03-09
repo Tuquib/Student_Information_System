@@ -20,7 +20,7 @@ class GradeController extends Controller
                 $query->where('status', 'Enrolled');
             })
             ->get();
-        return view('grades', compact('enrollments'));
+        return view('admin.grades', compact('enrollments'));
     }
 
     /**

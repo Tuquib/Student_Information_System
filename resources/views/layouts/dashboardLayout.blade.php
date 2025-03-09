@@ -80,31 +80,31 @@
     @if(auth()->guard('web')->check())
         <!-- Admin Navigation -->
         <li class="nav-item">
-            <a class="nav-link {{ Request::is('dashboard') ? 'active bg-gradient-dark text-white' : 'text-dark' }}" href="{{ route('dashboard') }}">
+            <a class="nav-link {{ Request::is('admin/dashboard') ? 'active bg-gradient-dark text-white' : 'text-dark' }}" href="{{ route('dashboard') }}">
                 <i class="material-symbols-rounded opacity-5">dashboard</i>
                 <span class="nav-link-text ms-1">Dashboard</span>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link {{ Request::is('students') ? 'active bg-gradient-dark text-white' : 'text-dark' }}" href="{{ route('students.index') }}">
+            <a class="nav-link {{ Request::is('admin/students') ? 'active bg-gradient-dark text-white' : 'text-dark' }}" href="{{ route('students.index') }}">
                 <i class="material-symbols-rounded opacity-5">person</i>
                 <span class="nav-link-text ms-1">Students</span>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link {{ Request::is('subjects') ? 'active bg-gradient-dark text-white' : 'text-dark' }}" href="{{ route('subjects.index') }}" id="billingLink">
+            <a class="nav-link {{ Request::is('admin/subjects') ? 'active bg-gradient-dark text-white' : 'text-dark' }}" href="{{ route('subjects.index') }}" id="billingLink">
                 <i class="material-symbols-rounded opacity-5">receipt_long</i>
                 <span class="nav-link-text ms-1">Subject</span>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link {{ Request::is('enrollments') ? 'active bg-gradient-dark text-white' : 'text-dark' }}" href="{{ route('enrollments.index') }}">
+            <a class="nav-link {{ Request::is('admin/enrollments') ? 'active bg-gradient-dark text-white' : 'text-dark' }}" href="{{ route('enrollments.index') }}">
                 <i class="material-symbols-rounded opacity-5">school</i>
                 <span class="nav-link-text ms-1">Enrollments</span>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link {{ Request::is('grades') ? 'active bg-gradient-dark text-white' : 'text-dark' }}" href="{{ route('grades.index') }}">
+            <a class="nav-link {{ Request::is('admin/grades') ? 'active bg-gradient-dark text-white' : 'text-dark' }}" href="{{ route('grades.index') }}">
                 <i class="material-symbols-rounded opacity-5">grade</i>
                 <span class="nav-link-text ms-1">Grades</span>
             </a>
@@ -242,7 +242,7 @@
               </ul>
             </li>
             <li class="nav-item d-flex align-items-center">
-              <a href="{{ route('profiles') }}" class="nav-link text-body font-weight-bold px-0">
+              <a href="#" class="nav-link text-body font-weight-bold px-0">
                 <i class="material-symbols-rounded">account_circle</i>
               </a>
             </li>
